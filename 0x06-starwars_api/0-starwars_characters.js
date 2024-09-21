@@ -1,9 +1,9 @@
 #!/usr/bin/node
 
-const request = require("request");
+const request = require('request');
 
 if (process.argv.length !== 3) {
-  console.log("Usage: ./0-starwars_characters.js <film_id>");
+  console.log('Usage: ./0-starwars_characters.js <film_id>');
   process.exit(1);
 }
 
@@ -15,7 +15,7 @@ request(url, (error, res, body) => {
     return;
   }
   if (res.statusCode !== 200) {
-    console.log("Failed To Get Movie");
+    console.log('Failed To Get Movie');
     return;
   }
   const film = JSON.parse(body);
@@ -31,7 +31,7 @@ const exactOrder = (characters, index) => {
       return;
     }
     if (res.statusCode !== 200) {
-      console.log("Failed To Get Character");
+      console.log('Failed To Get Character');
       return;
     }
     const character = JSON.parse(body);
